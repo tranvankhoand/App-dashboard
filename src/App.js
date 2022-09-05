@@ -13,8 +13,9 @@ function App() {
   return (
     <div className={currentMode === 'Dark' ? 'dark' : ''}>
     <BrowserRouter>
-      <div className="flex relative dark:bg-main-dark-bg">
-        <div className='fixed right-4 bottom-4' style={{ zIndex: '1' }}>
+      <div className="flex relative dark:bg-main-dark-bg"
+      style={{backgroundColor:'rgba(228,231,232,1)'}}>
+        <div className='fixed right-4 bottom-4' style={{ zIndex: '1'}}>
           <TooltipComponent content='Setting' position='top'>
             <button type='button' 
             style={{ background: currentColor, borderRadius: '50%' }} 
