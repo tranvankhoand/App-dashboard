@@ -8,8 +8,18 @@ import { Ecommerce, Orders, Calendar, Employees, Stacked, Line, Pyramid, Custome
 import { useStateContext } from './contexts/ContextProvider'
 
 function App() {
-  const { activeMenu,themeSetting,setThemeSetting,currentColor,currentMode } = useStateContext()
- 
+  const { activeMenu,themeSetting,setThemeSetting,currentColor,
+    setCurrentMode,currentMode,setCurrentColor } = useStateContext()
+  
+    useEffect(() =>{
+      const currentThemeColor = localStorage.getItem('colorMode')
+      const currentThemeMode = localStorage.getItem('themeMode')
+      if (currentThemeColor && currentThemeMode) {
+        setCurrentColor(currentThemeColor)
+        setCurrentMode(currentThemeMode)
+      }
+    })
+
   return (
     <div className={currentMode === 'Dark' ? 'dark' : ''}>
     <BrowserRouter>
